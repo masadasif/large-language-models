@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card" role="main">
+    <h1 class="card__title">Password Strength</h1>
+    <p class="card__subtitle">Type a password to see how strong it is.</p>
+
+    <div class="field">
+      <input
+        id="password"
+        type="password"
+        class="field__input"
+        placeholder="Enter password"
+        autocomplete="new-password"
+        spellcheck="false"
+      />
+      <button
+        type="button"
+        id="toggle"
+        class="field__toggle"
+        aria-label="Show password"
+        aria-pressed="false"
+      >
+        <span class="field__toggle-icon" aria-hidden="true">show</span>
+      </button>
+    </div>
+
+    <div class="meter" aria-hidden="true">
+      <div id="meter-bar" class="meter__bar"></div>
+    </div>
+
+    <div class="status">
+      <span id="status-label" class="status__label">Strength</span>
+      <span id="status-value" class="status__value">—</span>
+    </div>
+
+    <ul id="hints" class="hints" aria-live="polite">
+      <li class="hint" data-rule="length">
+        <span class="hint__dot"></span>At least 8 characters
+      </li>
+      <li class="hint" data-rule="uppercase">
+        <span class="hint__dot"></span>An uppercase letter (A–Z)
+      </li>
+      <li class="hint" data-rule="lowercase">
+        <span class="hint__dot"></span>A lowercase letter (a–z)
+      </li>
+      <li class="hint" data-rule="number">
+        <span class="hint__dot"></span>A number (0–9)
+      </li>
+      <li class="hint" data-rule="special">
+        <span class="hint__dot"></span>A special character (!@#$…)
+      </li>
+    </ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
