@@ -9,7 +9,7 @@
 <body>
   <main class="card" role="main">
     <h1 class="card__title">Password Strength</h1>
-    <p class="card__subtitle">Type a password to see how strong it is.</p>
+    <p class="card__subtitle">Type a password — or generate one below.</p>
 
     <div class="field">
       <input
@@ -57,7 +57,65 @@
         <span class="hint__dot"></span>A special character (!@#$…)
       </li>
     </ul>
+
+    <hr class="divider" />
+
+    <section class="generator" aria-label="Password generator">
+      <header class="generator__header">
+        <h2 class="generator__title">Generate password</h2>
+      </header>
+
+      <div class="control">
+        <div class="control__row">
+          <label for="length" class="control__label">Length</label>
+          <span id="length-value" class="control__value">16</span>
+        </div>
+        <input
+          id="length"
+          type="range"
+          class="slider"
+          min="4"
+          max="48"
+          value="16"
+          step="1"
+        />
+      </div>
+
+      <div class="options" role="group" aria-label="Character types">
+        <label class="option">
+          <input type="checkbox" data-pool="uppercase" checked />
+          <span class="option__box" aria-hidden="true"></span>
+          <span class="option__label">Uppercase</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" data-pool="lowercase" checked />
+          <span class="option__box" aria-hidden="true"></span>
+          <span class="option__label">Lowercase</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" data-pool="number" checked />
+          <span class="option__box" aria-hidden="true"></span>
+          <span class="option__label">Numbers</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" data-pool="symbol" checked />
+          <span class="option__box" aria-hidden="true"></span>
+          <span class="option__label">Symbols</span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="generate" type="button" class="btn btn--primary">
+          Generate
+        </button>
+        <button id="copy" type="button" class="btn btn--secondary">
+          Copy
+        </button>
+      </div>
+    </section>
   </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
