@@ -1,0 +1,122 @@
+/* Global reset and body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Card layout */
+.card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-header h1 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Input group and label */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: 500;
+}
+
+#password {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#password:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* Strength container and progress bar */
+.strength-container {
+    margin: 20px 0;
+}
+
+.progress-bar-wrapper {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+    border-radius: 4px;
+}
+
+.strength-text {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Hints styling */
+.validation-hints {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+.validation-hints p {
+    margin: 5px 0;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+}
+
+.validation-hints span {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Dynamic color utilities (CSS approach) */
+/* Weak */
+.weak { color: #dc3545; } /* Red */
+/* Medium */
+.medium { color: #ffc107; } /* Yellow/Orange */
+/* Strong */
+.strong { color: #28a745; } /* Green */
+.none { color: #999; }
+
+/* JS will manage applying these classes/styles */
