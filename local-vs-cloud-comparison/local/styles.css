@@ -25,19 +25,156 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
+/* Header */
+header {
+    margin-bottom: 20px;
+}
+
 .card-header h1 {
     color: #333;
     font-size: 1.8em;
-    margin-bottom: 30px;
+    margin: 0;
     font-weight: 600;
 }
 
-/* Input group and label */
-.input-group {
+/* Controls and Inputs */
+.controls, .input-group {
     margin-bottom: 25px;
     text-align: left;
 }
 
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Length Slider */
+#length-slider {
+    width: 100%;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    margin-right: 15px;
+    color: #555;
+}
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Custom Characters */
+.custom-chars {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.custom-char-entry {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.custom-char-entry input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.custom-char-entry .add-custom-btn {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.custom-char-entry .add-custom-btn:hover {
+    background-color: #218838;
+}
+
+.custom-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px dashed #ddd;
+}
+.custom-list span {
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.95em;
+    user-select: all;
+}
+
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#generate-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+#generate-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#copy-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+#copy-btn:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.action-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Input Field */
 .input-group label {
     display: block;
     margin-bottom: 10px;
@@ -78,7 +215,7 @@ body {
 .progress-bar {
     height: 100%;
     width: 0;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother curve */
     border-radius: 4px;
 }
 
@@ -100,7 +237,6 @@ body {
 
 .validation-hints p {
     margin: 5px 0;
-    color: #aaa;
     display: flex;
     align-items: center;
 }
@@ -108,15 +244,32 @@ body {
 .validation-hints span {
     margin-right: 8px;
     font-size: 1.2em;
+    line-height: 1;
 }
 
-/* Dynamic color utilities (CSS approach) */
-/* Weak */
-.weak { color: #dc3545; } /* Red */
-/* Medium */
-.medium { color: #ffc107; } /* Yellow/Orange */
-/* Strong */
-.strong { color: #28a745; } /* Green */
-.none { color: #999; }
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+}
 
-/* JS will manage applying these classes/styles */
+/* Dynamic color utilities */
+/* Weak */
+.weak { color: #dc3545; }
+/* Medium */
+.medium { color: #ffc107; }
+/* Strong */
+.strong { color: #28a745; }
+/* None/Default */
+.none { color: #aaa; }
